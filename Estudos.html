@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Ola Mundo!!</title>    
+        
+        <script type="text/javascript" src=""></script>
+
+        <script type="text/javascript">
+
+            // Funcao / function -> Sao um bloco de comandos que sao executados quando soliciados.
+            function Mensage(msg){
+                alert(msg);
+            }// Uma funcao sem o return 
+             var idade = prompt("Qual e sua idade?", ""); 
+
+            if (idade >= 1 && idade < 12 ){
+                alert("Voce ainda e crianca");
+            }else if (idade >= 12 && idade <= 25){
+                alert("Voce e jovem");
+            }else if (idade >= 25 && idade <= 45){  
+                alert("Voce e um adulto");
+            }else {
+                alert("Voce e velho"); 
+            } 
+
+            function Soma(a, b){
+
+               var resultado = a + b;
+
+                return resultado;
+            } // Uma funcao com o return, no qual irar nos retornar algo.
+            x = Soma(10, 10);
+            alert("Resultado:" + x);
+
+        </script>
+    </head>
+    <body>
+        <button onclick="Mensage('Ola Kevin como voce esta?')">Pergunta</button>
+        <button onclick="Mensage('Estou bem, gracas a Deus')">Resposta</button>
+    </body>
+</html>

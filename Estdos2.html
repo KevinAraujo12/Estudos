@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Ola Mundo!!</title>    
+        
+        <script type="text/javascript" src=""></script>
+
+    </head>
+    <body>
+
+        <button>Css</button>
+        <button>html</button>
+
+        <div id="Cssbotao">
+            
+        </div>
+        
+       <script type="text/javascript">
+        // Usando o javascript para modificar o css.
+
+        var botoes = document.getElementsByTagName("button"); // Criamos uma variavel para armazenar os elementos do button.
+        
+        botoes[0].addEventListener("click", MudarTelaFundo); // pegando o elemento button na casa 0 do array, e adicinando um evento para ele, que no caso e o click e logo em seguida colodamos a logica.
+        botoes[1].addEventListener("click", MudarHtml);
+
+        function MudarTelaFundo(){
+            document.getElementsByTagName("body")[0].style.backgroundColor = "#FF5847"; // Esta a logica que estamos pegando o elemento body do array casa 0 e trocando a sua cor de fundo usando css = style.brackgroundColor =. 
+        }
+
+        function MudarHtml(){
+            document.getElementById("Cssbotao").innerHTML = "Ola meu mundo lindo";
+        }
+
+       </script>
+    </body>
+</html>

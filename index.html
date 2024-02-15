@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ola!!!!</title>
+
+        <script type="text/javascript" src="estudos.js"> // Forma de importar no html.
+        </script>
+
+       <script type="text/javascript">
+            //Ex de concatenacao = juntas
+            var nomeCompleto = "Kevin Araujo"
+            var frase = '';
+
+            var resultado1 = 1+4;
+            var resultado2 = 1-4;
+            var resultado3 = 1*4;
+            var resultado4 = 4/1;
+            var resultado5 = 4/1+2*(3-1);
+            
+            var idade = 20;
+            // Estruturas de decicoes    
+            if (idade > 18){
+                frase = "Sua fase sera mais dificil"
+            } else if (idade <= 18 && idade > 10){
+                frase = "Sua fase sera normal"
+            } else {
+                frase = "Sua fase sera facil";
+            }
+            sexo = "M";
+            switch (sexo) {
+                case "M":
+                    frase = frase + " Masculino" // ex: de concatenacao aonde eu salvo oque foi adiquirido em frase em idade e depois eu somo com o sexo.
+                    break;
+                case "F":
+                    frase = frase + " Feminino"
+                    break;
+                default:
+                    break;
+            }
+
+            //Estruturas de repedicoes
+            // Enquanto
+          
+            var numero = 0;
+            while (numero < 1){
+                alert(numero);
+                numero = numero + 1;
+            }
+
+
+//            for(declaracao; condicao; logica de incremento/decremento;){
+//               alert();
+//           };
+
+        for(var i = 0; i < 1; i++){
+            alert(i);
+        }
+ 
+            // Array
+
+            var nome1 = "Kevin";
+            var nome2 = "Araujo";
+            var nome3 = "Nunes";
+
+            var nomes = ["Kevin", "Araujo", "Nunes"];
+
+           alert(nomes[0] + " " + nomes[1] + " " + nomes[2]); // forma de percorrer o meu array
+
+           for(var k = 0; k < nomes.length; k++){
+                alert(nomes[k]);
+           } // forma de pecorrer meu array
+
+
+           
+
+
+        </script> 
+    <body>
+
+        ola mundo!!
+
+        <botton onclick="javascript:alert(frase);">----- Clicar</botton>
+    </body>
+</html>
+
