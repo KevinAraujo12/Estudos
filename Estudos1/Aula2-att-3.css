@@ -1,0 +1,146 @@
+#livro {
+    display: flex;
+} 
+#tamanho1 {
+    width: 100%;
+    margin-top: 50px;
+} 
+#tamanho2 {
+    width: 150%;
+    margin-top: 55px;
+    margin-left: 4px;
+} 
+#tamanho3 {
+    width: 45%;
+    margin-top: 55px;
+} 
+#img1 {
+    margin-left: 22px;
+    margin-top: 12px;
+}
+#img2 {
+    margin-top: 12px;
+    margin-left: 20px;
+}
+#img3 {
+    margin-left: 22px;
+}
+#img4 {
+    margin-left: 15px;
+}
+body header h1 {
+    text-align: center;
+}
+hr {
+    margin-top: -15px;
+    border-color:brown ;
+}
+#livro1 {
+    display: flex;
+    margin-left: 15px;
+}
+h5 {
+    width: 200px;
+    text-align: center;
+}
+#link {
+    margin-top: 20px;
+    margin-left: 25px;
+}
+#img10 {
+    margin-left: 20px;
+}
+#tamanho10 {
+    width: 45%;
+    margin-top: 55px;
+}
+#livro10 {
+    display: flex;
+    margin-left: -40px;
+}
+#img30 {
+    margin-left: 25px;
+    margin-top: -15px;
+}
+#tamanho30 {
+    width: 45%;
+    margin-top: 55px;
+}
+#img100 {
+    margin-left: 23px;
+}
+#tamanho100 {
+    width: 40%;
+    margin-top: 40px;
+}
+#img101 {
+    margin-left: 15px;
+}
+#tamanho101 {
+    width: 90%;
+    margin-top: 40px;
+}
+#livro101 {
+    display: flex;
+    margin-left: -100px;
+}
+body {
+    background-color: bisque;
+    font-family: Arial, sans-serif;
+}
+header{
+    background-color:rgb(212, 153, 110);
+    padding: 2px;
+}
+h2 {
+    color: brown;
+}
+.modal {
+    display: none;
+    min-height: 110px;
+    width: 300px;
+    position: fixed;
+    background-color: white;
+    top: 50%;
+    height: 140px;
+    margin-top: -100px;
+    left: 50%;
+    margin-left: -150px;
+    padding: 30px;
+}
+.modal input[type=text] {
+    width: 95%;
+}
+.modal h2 {
+    margin-top: 10px;
+}
+.modal form input[type=submit]{
+    width: 80px;
+    background-color: brown;
+    border-radius: 2px;
+    color: rgb(255, 255, 255);
+}
+.modal button {
+    margin-top: -10px;
+    margin-right: -10px;
+    width: 25px;
+    float: right;
+    background-color: brown;
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+.modal form span {
+    display: none;
+    color: red;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 13px;
+}
+.EmailInvalido{
+    border: 1px solid red;
+}
+#botaomodal{
+    margin-top: 10px;
+}
