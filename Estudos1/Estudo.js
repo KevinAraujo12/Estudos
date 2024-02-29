@@ -1,4 +1,4 @@
-setTimeout(TimeModal,5000);
+setTimeout(TimeModal,1000);
 
  function TimeModal() {
     document.querySelector(".modal").style.display = "block";
