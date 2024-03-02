@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Formulario de login</title>
+      <link rel="stylesheet" href="Estudos.css" />
+    </head>
+    <body>
+        <div>
+            <form name="formulario" method="get">               
+                <div id="img">
+                    <img src="download.jpeg" alt="logo">
+                </div>  
+                <div class="centralizar-div">
+                    <label for="email">Email:<label>
+                    <input name="Email" type="email" id="email">
+                    <span>E-mail incorreto.</span>
+                </div>
+                <div>
+                    <label id="marfin-label" for="Senha">Senha:<label>
+                    <input name="text" type="password" id="Senha">
+                    <span id="span">Senha incorreta.</span>
+                </div>
+                <div>
+                    <input type="checkbox" id="salvarSenha" />
+                    <label for="salvarSenha">Salvar senha</label>
+                
+                <div>
+                    <input id="button" type="submit" value="Enviar"/>
+                </div>
+            </form>
+            <div>
+                <button onclick="Fecharform()" type="button">Cancelar</button>
+            </div>
+        </div>
+        <script type="text/javascript" src="Estudo.js"></script>
+    </body>
+</html>
