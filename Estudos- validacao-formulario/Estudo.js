@@ -18,7 +18,6 @@ function EnviarFormulario(e){
         document.querySelector("#span").style.display = "block";
         EnviarFormulario = false;
     }if (EnviarFormulario == false){
-        alert("AQIO");
         e.preventDefault();
     }    
 
