@@ -16,8 +16,8 @@
 .cone {
     position: absolute;
     bottom: 0;
-    width: 80px;
-    animation: cone-animation 2s infinite linear; 
+    width: 70px;
+    animation: cone-animation 10s infinite linear; 
 }
 
 @keyframes cone-animation {
