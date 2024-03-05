@@ -17,11 +17,11 @@
     position: absolute;
     bottom: 0;
     width: 70px;
-    animation: cone-animation 2s infinite linear; 
+    animation: cone-animation 1s infinite linear;   
 }
 
 .kevin-skate {
-    bottom: 0;
+    bottom: 0px;
     width: 160px;
     position: absolute;
 }
