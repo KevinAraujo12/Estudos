@@ -1,13 +1,19 @@
-import React from "react";
+import React, { Component } from "react";
 
-// Aplicando class component
 
-function App() {
-    return (
-        <div>
-            <h1>Conheca a nossa equipe:</h1>             
-        </div>
-    );
+class App extends Component {
+
+    constructor(props){
+        super(props);
+    }
+
+    render(){
+        return(
+            <div>
+
+            </div>
+        );
+    }
 }
 
 export default App;
