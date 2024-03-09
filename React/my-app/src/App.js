@@ -1,45 +1,58 @@
 import React, { Component } from "react";
-import "./style.css";
+import "./index.css"
 
 class App extends Component {
 
     constructor(props){
         super(props);
         this.state = {
-            texto: ""
-        }
-        this.frases = ["Parabens","Voce e brilhante","Deus te ama","Galao da massa","Jesus esta voltando" ];
-        this.quebrarBiscoito = this.quebrarBiscoito.bind(this);
+            numero: 0,
+            botao: "VAI"
+        };
+        this.timer = null;
+        this.vai = this.vai.bind(this);
+        this.limpar = this.limpar.bind(this);
     }
 
-    quebrarBiscoito(){
-        let state = this.state;
-        let numeroAleatorio = Math.floor(Math.random() * this.frases.length); // Estamos pegando o array de frases e gerando um numero aleatoria para exibir uma frase aleatoria
-        this.state.texto = this.frases[numeroAleatorio];
-        this.setState(state);
+    vai(){
+
+        if(this.timer !== null){
+            clearInterval(this.timer);
+            this.timer = null
+            this.setState({ botao: "VOLTAR"});
+        }else{
+            this.timer = setInterval(()=>{
+                let state = this.state;
+                state.numero = state.numero + 0.1;
+                this.setState(state);
+                this.setState({ botao: "PARAR"});
+                console.log(state.numero);
+            },100);
+        }
+        
     }
+
+    limpar(){
+        clearInterval(this.timer);
+        this.timer = null
+        let state = this.state;
+        state.botao = "VAI";
+        state.numero = 0;
+        this.setState(state);
+    } 
 
     render(){
-        
         return(
             <div className="container">
-                <img src={require("./Assets/biscoito.png")} className="img" />
-                <h3 className="textoFrase">{this.state.texto}</h3>
-                <Butao name="Abrir Biscoito" quebrar={this.quebrarBiscoito}  />
+                <img src={require("./Assets/cronometro.png")} className="img"/>   
+                <a  className="timer">{this.state.numero.toFixed(1)}</a>
+                <di className="areaBtn">
+                    <a className="botao" onClick={this.vai}>{this.state.botao}</a>
+                    <a className="botao" onClick={this.limpar}>limpar</a>
+                </di>
             </div>
         );
     }
 }
-
-class Butao extends Component {
-    render(){
-        return(
-            <div>
-                <button onClick={this.props.quebrar}>{this.props.name}</button>
-            </div>
-        );
-    }
-}
-
 
 export default App;
