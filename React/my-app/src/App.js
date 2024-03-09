@@ -1,53 +1,43 @@
 import React, { Component } from "react";
+import "./style.css";
 
 class App extends Component {
 
     constructor(props){
         super(props);
         this.state = {
-            form: {
-                nome: "",
-                email: "",
-                senha: "",
-                sexo: ""
-            }
+            texto: ""
         }
-
-        this.dadosform = this.dadosform.bind(this);
+        this.frases = ["Parabens","Voce e brilhante","Deus te ama","Galao da massa","Jesus esta voltando" ];
+        this.quebrarBiscoito = this.quebrarBiscoito.bind(this);
     }
 
-    dadosform(e) {
-        let form = this.state.form;
-        form[e.target.name] = e.target.value;
-        this.setState({ form: form });
+    quebrarBiscoito(){
+        let state = this.state;
+        let numeroAleatorio = Math.floor(Math.random() * this.frases.length); // Estamos pegando o array de frases e gerando um numero aleatoria para exibir uma frase aleatoria
+        this.state.texto = this.frases[numeroAleatorio];
+        this.setState(state);
     }
 
-    render() {
+    render(){
+        
         return(
-            <div>
-                <h1>Login</h1>
-                Nome:
-                <input name="nome" type="text" value={this.state.form.nome} onChange={this.dadosform} ></input><br/><br/>
-                Email:
-                <input name="email" type="email" value={this.state.form.email} onChange={this.dadosform} ></input><br/><br/>
-                Senha:
-                <input name="senha" type="password" value={this.state.form.senha} onChange={this.dadosform}></input><br/><br/>
-                Sexo:
-                <select name="sexo" value={this.state.form.sexo} onChange={this.dadosform}>
-                    <option value="Masculino" >Masculino</option>
-                    <option value="Feminino" >Feminino</option>
-                </select> <br/><br/><br/><br/><br/><br/><br/><br/>
-                <div>
-                    <h2>        
-                        {this.state.form.nome}<br/>
-                        {this.state.form.email}<br/>
-                        {this.state.form.senha}<br/>
-                        {this.state.form.sexo}<br/>
-                    </h2>
-                </div>
+            <div className="container">
+                <img src={require("./Assets/biscoito.png")} className="img" />
+                <h3 className="textoFrase">{this.state.texto}</h3>
+                <Butao name="Abrir Biscoito" quebrar={this.quebrarBiscoito}  />
             </div>
         );
+    }
+}
 
+class Butao extends Component {
+    render(){
+        return(
+            <div>
+                <button onClick={this.props.quebrar}>{this.props.name}</button>
+            </div>
+        );
     }
 }
 
