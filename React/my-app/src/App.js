@@ -1,13 +1,22 @@
-import React, { useState } from "react";
-
-
-    //API useState !!!! 
-
+import React, { useState, useEffect } from "react";
 
 function App(){
-    // O primeiro parametro que usamos na const e o nome da nossa state e o segundo paremetro e o nome que nos chamar para atualizer a state.
-    const [tarefas, setTarefas] = useState(["Pagar a conta de luz", "Estudar react hooks"]);
+
+    const [tarefas, setTarefas] = useState([]);
     const [input, setInput] = useState("");
+
+    useEffect(()=> {
+        localStorage.setItem("tarefas", JSON.stringify(tarefas));
+    }, [tarefas]);
+
+    useEffect(() => {
+        const storageTarefas = localStorage.getItem("tarefas"); 
+        if(storageTarefas){
+            setTarefas(JSON.parse(storageTarefas));
+        }
+    }, []);
+
+
 
     const handleAdd = () => {
        setTarefas([...tarefas, input]);
