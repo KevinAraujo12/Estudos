@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 
 function App(){
 
@@ -16,11 +16,20 @@ function App(){
         }
     }, []);
 
+    const quantidadeTarefas = useMemo(()=> tarefas.length, [tarefas]);
+    
+    
+    const handleAdd = useCallback(() => {
+        if(input === ""){
+            errorInput();
+        }else{
+            setTarefas([...tarefas, input]);
+            setInput("");
+        }
+    },[tarefas, input]);
 
-
-    const handleAdd = () => {
-       setTarefas([...tarefas, input]);
-       setInput("");
+    const errorInput = () => {
+        alert("Ops, algo deu errado");
     }
 
     return(
@@ -28,6 +37,7 @@ function App(){
             <ul>
             {tarefas.map((tarefas) => (<li key={tarefas}>{tarefas}</li>))}
             </ul>
+            <strong>Voce tem {quantidadeTarefas} Taferas</strong><br/>
             <input type="text" value={input} onChange={(e) => {setInput(e.target.value)}}/>
             <button type="button" onClick={handleAdd}>Adicionar</button>
         </div>
