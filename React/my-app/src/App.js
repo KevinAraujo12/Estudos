@@ -1,46 +1,43 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
+import React, { useState, useEffect } from "react";
+import './style.css';
 
-function App(){
+// https://sujeitoprogramador.com/rn-api/?api=posts
 
-    const [tarefas, setTarefas] = useState([]);
-    const [input, setInput] = useState("");
-
-    useEffect(()=> {
-        localStorage.setItem("tarefas", JSON.stringify(tarefas));
-    }, [tarefas]);
+function App() {
+    const [nutri, setNutri] = useState([]);
+    
 
     useEffect(() => {
-        const storageTarefas = localStorage.getItem("tarefas"); 
-        if(storageTarefas){
-            setTarefas(JSON.parse(storageTarefas));
+        const loadApi = () => {
+            let url = "https://sujeitoprogramador.com/rn-api/?api=posts";
+            fetch(url)
+            .then((r) => r.json())
+            .then((json) => {
+            setNutri(json);
+            })
         }
-    }, []);
 
-    const quantidadeTarefas = useMemo(()=> tarefas.length, [tarefas]);
-    
-    
-    const handleAdd = useCallback(() => {
-        if(input === ""){
-            errorInput();
-        }else{
-            setTarefas([...tarefas, input]);
-            setInput("");
-        }
-    },[tarefas, input]);
-
-    const errorInput = () => {
-        alert("Ops, algo deu errado");
-    }
+        loadApi();
+    }, [])
 
     return(
-        <div>
-            <ul>
-            {tarefas.map((tarefas) => (<li key={tarefas}>{tarefas}</li>))}
-            </ul>
-            <strong>Voce tem {quantidadeTarefas} Taferas</strong><br/>
-            <input type="text" value={input} onChange={(e) => {setInput(e.target.value)}}/>
-            <button type="button" onClick={handleAdd}>Adicionar</button>
-        </div>
+         <div className="container">
+           <header>
+            <strong>React Nutri</strong>
+           </header>
+           {nutri.map((i) => {
+            return (
+                <article key={i.id} className="post">
+                    <strong className="titulo">{i.titulo}</strong>
+                    <img src={i.capa} alt={i.titulo} className="capa"/>
+                    <p className="subtitulo">
+                        {i.subtitulo}
+                    </p>
+                    <a className="botao">Acessar</a>
+                </article>
+            );
+           })}
+         </div>
     );
 }
 
