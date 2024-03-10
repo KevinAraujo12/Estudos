@@ -17,7 +17,7 @@
     position: absolute;
     bottom: 0;
     width: 70px;
-    animation: cone-animation 1s infinite linear;   
+    animation: cone-animation 1s infinite linear;    
 }
 
 .kevin-skate {
@@ -56,4 +56,14 @@
     100% {
         bottom: 0;
     }
+}
+
+.contador span {
+    font-size: 60px;
+}
+
+.contador {
+    float: right;
+    margin-right: 50px;
+    
 }
